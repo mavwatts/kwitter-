@@ -1,5 +1,35 @@
 #login-form {
   display: flex;
   flex-direction: column;
-  max-width: 20em;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid #DEDEDF;
+  width: 44em;
+  height: 20em;
+
+}
+
+#login-form input {
+  padding-top: 1.5em;
+  width: 25em;
+}
+
+#login-form input {
+  margin-bottom: 2em;
+}
+
+#login-form button{
+  height: 3em;
+  width: 20em;
+  background-color: #87cef8;
+  margin-bottom: 1.5em;
+
+}
+
+#root {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10em;
 }

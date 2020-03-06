@@ -7,7 +7,11 @@ class Home extends React.Component {
     return (
       <>
         <Menu />
-        <h2>Your favorite microblogging platform</h2>
+        <h2>
+          {" "}
+          <img src="/logo/duck-logo.png" height="50px" width="50px" />
+          Kwacker
+        </h2>
         <LoginForm />
       </>
     );
