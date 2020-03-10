@@ -31,5 +31,14 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin-top: 10em;
+}
+
+.ui.divider{
+  color: black;
+  line-height: 2em;
+  width: 100vw;
+}
+
+.ui.divider.inverted, .ui.horizontal.inverted.divider, .ui.vertical.inverted.divider {
+ color: black; 
 }

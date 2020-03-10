@@ -1,0 +1,25 @@
+  input{
+    height: 3em;
+    width: 20em;
+    background-color: #87cef8;
+    margin-bottom: 1.5em;
+  
+  }
+
+  .ui.form .field>label {
+      text-align: center;
+  }
+
+  .ui.form input:not([type]){
+    height: 3em;
+    width: 25em;
+    background-color: #87cef8;
+
+  }
+
+  .ui.form .field {
+    text-align: center;
+
+  }
+
+ 

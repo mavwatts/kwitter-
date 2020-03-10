@@ -3,6 +3,9 @@ import Spinner from "react-spinkit";
 import { connect } from "react-redux";
 import { login } from "../../redux";
 import "./LoginForm.css";
+import { Divider } from "semantic-ui-react";
+import Form from "./Form";
+import './Form.css'
 
 class LoginForm extends React.Component {
   state = { username: "", password: "" };
@@ -42,6 +45,12 @@ class LoginForm extends React.Component {
         </form>
         {loading && <Spinner name="circle" color="blue" />}
         {error && <p style={{ color: "red" }}>{error.message}</p>}
+        <Divider horizontal inverted>
+          Or{" "}
+        </Divider>
+        {/*Possibly place for create a user vvvvvvvv */}
+        <Form />
+
       </React.Fragment>
     );
   }
@@ -89,5 +98,3 @@ export default connect(
 // )
 
 // export default LoginForm
-
-
