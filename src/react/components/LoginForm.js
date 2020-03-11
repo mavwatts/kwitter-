@@ -4,7 +4,7 @@ import { connect } from "react-redux";
 import { login } from "../../redux";
 import "./LoginForm.css";
 import { Divider } from "semantic-ui-react";
-import Form from "./Form";
+import Form from "./SignupForm";
 import './Form.css'
 
 class LoginForm extends React.Component {
@@ -48,7 +48,7 @@ class LoginForm extends React.Component {
         <Divider horizontal inverted>
           Or{" "}
         </Divider>
-        {/*Possibly place for create a user vvvvvvvv */}
+        {/*Create a new user vvvvvvvv */}
         <Form />
 
       </React.Fragment>

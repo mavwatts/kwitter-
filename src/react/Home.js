@@ -9,7 +9,7 @@ class Home extends React.Component {
         <Menu />
         <h2>
           {" "}
-          <img src="/logo/duck-logo.png" height="50px" width="50px" />
+          <img src="/logo/duck-logo.png" height="50px" width="50px" alt='duck-logo' />
           Kwacker
         </h2>
         <LoginForm />
