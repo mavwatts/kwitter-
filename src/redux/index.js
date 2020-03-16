@@ -4,7 +4,7 @@ import { combineReducers } from "redux";
 import { connectRouter } from "connected-react-router";
 import { reducers as authReducers } from "./auth";
 import { reducers as usersReducers } from "./users";
-import {reducers as messageReducers} from "./messages";
+import { reducers as messageReducers } from "./messages";
 
 export * from "./auth";
 export * from "./users";
