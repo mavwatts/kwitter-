@@ -7,4 +7,16 @@ form#signup-form.ui.form {
     justify-content: center;
     text-align: center;
     margin-left: 2em;
+    
+}
+
+#login-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid #DEDEDF;
+  width: 44em;
+  height: fit-content;
+
 }

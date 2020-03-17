@@ -13,8 +13,7 @@ class Menu extends React.Component {
   render() {
     return (
       <div id="menu">
-                {/* <img src='/logo/duck-logo.png' height='50px' width='50px' />
-        <h1>Kwacker</h1> */}
+             
         {this.props.isAuthenticated && (
           <div id="menu-links">
             <Link to="/messagefeed">Feed</Link>
@@ -23,6 +22,7 @@ class Menu extends React.Component {
             </Link>
           </div>
         )}
+        
       </div>
     );
   }
