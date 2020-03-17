@@ -21,7 +21,7 @@
 #login-form button{
   height: 3em;
   width: 20em;
-  background-color: #87cef8;
+  background-color: #3291da;
   margin-bottom: 1.5em;
 
 }
@@ -34,11 +34,12 @@
 }
 
 .ui.divider{
-  color: black;
+  color: white;
   line-height: 2em;
   width: 100vw;
 }
 
 .ui.divider.inverted, .ui.horizontal.inverted.divider, .ui.vertical.inverted.divider {
- color: black; 
+ color: white; 
 }
+

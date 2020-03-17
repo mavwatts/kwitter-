@@ -1,0 +1,10 @@
+label {
+    color: white;
+  }
+
+form#signup-form.ui.form {
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    margin-left: 2em;
+}

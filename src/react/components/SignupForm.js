@@ -2,8 +2,8 @@ import React from 'react';
 import { Button, Checkbox, Form } from 'semantic-ui-react';
 import Spinner from "react-spinkit";
 import { connect } from "react-redux";
-import { createUser } from "../../redux"
-
+import { createUser } from "../../redux";
+import './SignupForm.css'
 
 class SignUpForm extends React.Component {
   state = { username: "", password: "" , displayName: ""};
@@ -24,6 +24,7 @@ return (
   <Form id="signup-form" onSubmit={this.createUser}>
 
     <Form.Field>
+      
       <label>Username</label>
       <input 
       name='username'
