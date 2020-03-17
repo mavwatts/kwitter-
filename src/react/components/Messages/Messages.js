@@ -3,9 +3,8 @@ import { useForm, Controller } from "react-hook-form";
 import { TextField, Button } from "@material-ui/core";
 // import { useSelector } from "react-redux";
 import MessageBoard from "./MessageBoard";
-import { loadState } from "./localStorage";
+// import { loadState } from "./localStorage";
 import { useDispatch } from "react-redux";
-
 const Messages = props => {
   // const authToken = useSelector(state => state.login.token);
   const dispatch = useDispatch();
@@ -15,7 +14,7 @@ const Messages = props => {
   //   console.log(persistedState?.token ?? "no stored token");
 
   const storedName =
-    JSON.parse(localStorage?.getItem("login"))?.result?.token ?? undefined;
+    JSON.parse(localStorage?.getItem("login"))?.result?.username ?? undefined;
   const storedAuthToken =
     JSON.parse(localStorage?.getItem("login"))?.result?.token ?? undefined;
   // const username = useSelector(state => state.messages.username);
@@ -61,19 +60,20 @@ const Messages = props => {
       // console.log(messageList);
       // console.log(loggedIn);
 
-      console.log(persistedState && "local storage: true");
-    };
+      //   console.log(persistedState && "local storage: true");
+      // };
 
-    function receiveMessages(messageList) {
-      return {
-        type: "RECEIVEMESSAGES",
-        messages: messageList.map(value => {
-          console.log(value);
-          return value;
-        })
-      };
-    }
-    fetchMessages();
+      function receiveMessages(messageList) {
+        return {
+          type: "RECEIVEMESSAGES",
+          messages: messageList.map(value => {
+            console.log(value);
+            return value;
+          })
+        };
+      }
+      fetchMessages();
+    };
   };
 
   //   console.log(watch("text"));
@@ -107,7 +107,9 @@ const Messages = props => {
       <MessageBoard />
       {/* <p>logged in: {loggedIn ? "true" : "false"}</p> */}
       {/* <p>token: {authToken}</p> */}
-      <p>stored token?: {persistedState?.token ?? "no stored token"}</p>
+      <p>
+        stored token?: {storedAuthToken ? storedAuthToken : "no stored token"}
+      </p>
     </React.Fragment>
   );
 };

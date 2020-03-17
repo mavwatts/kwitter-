@@ -13,8 +13,9 @@ import { useSelector } from "react-redux";
 
 const MessageList = () => {
   const messageList = useSelector(
-    state => state.messages.messages.result?.messages ?? undefined
+    state => state?.messages?.messages?.result?.messages ?? []
   );
+  console.log(messageList);
 
   const useStyles = makeStyles(theme => ({
     root: {

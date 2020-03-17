@@ -1,16 +1,16 @@
 import React from "react";
 import { Button } from "@material-ui/core";
 import { useDispatch, useSelector } from "react-redux";
+
 import MessageList from "./MessageList";
 
 const MessageBoard = props => {
   // const username = useSelector(state => state.messages.username);
   // const loggedIn = useSelector(state => state.login.loggedIn);
   const dispatch = useDispatch();
-  //   const persistedState = loadState();
-  //   const storedName = persistedState?.username ?? "no stored name";
-  const storedName =
-    JSON.parse(localStorage?.getItem("login"))?.result?.token ?? undefined;
+
+  const storedName = JSON.parse(localStorage.getItem("login")).result.username;
+
   const fetchMessages = async () => {
     const messageListUrl = `https://kwitter-api.herokuapp.com/messages?limit=20&offset=0&username=${storedName}`;
     let data = await fetch(messageListUrl);
@@ -23,7 +23,7 @@ const MessageBoard = props => {
     // console.log(messageList);
     // console.log(loggedIn);
 
-    console.log(persistedState && "local storage: true");
+    console.log(storedName && "local storage: true");
   };
   // fetchMessages();
   function receiveMessages(messageList) {
