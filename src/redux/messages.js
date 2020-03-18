@@ -59,10 +59,22 @@ export const getMessage = messageId => (dispatch, getState) => {
     .catch(err => Promise.reject(dispatch(GET_MESSAGES.FAIL(err))));
 };
 
+const RECEIVE_MESSAGES = createActions("RECEIVEMESSAGES");
+
+export const receiveMessages = () => dispatch => {
+  dispatch(RECEIVE_MESSAGES.START());
+  console.log("receive messages working");
+  return fetch(url + `?limit=20&offset=0`)
+    .then(handleJsonResponse)
+    .then(result => dispatch(RECEIVE_MESSAGES.SUCCESS(result)))
+    .catch(err => Promise.reject(dispatch(RECEIVE_MESSAGES.FAIL(err))));
+};
+
 export const reducers = {
   messages: createReducer(asyncInitialState, {
     ...asyncCases(DELETE_MESSAGES),
     // ...asyncCases(CREATE_MESSAGES),
-    ...asyncCases(GET_MESSAGES)
+    ...asyncCases(GET_MESSAGES),
+    ...asyncCases(RECEIVE_MESSAGES)
   })
 };

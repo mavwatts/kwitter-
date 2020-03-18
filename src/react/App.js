@@ -3,9 +3,9 @@ import { Switch, Route } from "react-router-dom";
 import Home from "./Home";
 import Profile from "./Profile";
 import NotFound from "./NotFound";
-import TestMessage from "./components/Messages/TestMessage";
+
 import Messages from "./components/Messages/Messages";
-import MessageBoard from "./components/Messages/MessageBoard";
+// import TestMessages from "./components/Messages/TestMessage"
 
 function App() {
   return (
