@@ -1,7 +1,10 @@
 import React from "react";
 import { Menu } from "./components";
 import { userIsAuthenticated } from "./HOCs";
-import './components/ProfilePage.css'
+import './components/ProfilePage.css';
+import FeedExampleBasic from "./components/Feed"
+
+
 
 class Profile extends React.Component {
   render() {
@@ -9,10 +12,7 @@ class Profile extends React.Component {
       <React.Fragment>
         <Menu isAuthenticated={this.props.isAuthenticated} />
         <h2>Profile</h2>
-
-        <div>
-
-        </div>
+<FeedExampleBasic />
       </React.Fragment>
     );
   }

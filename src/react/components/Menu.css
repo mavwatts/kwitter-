@@ -20,6 +20,13 @@
   cursor: pointer;
 }
 
+#menu-links a:hover {
+  padding-right: 1em;
+  color: blue;
+  text-decoration: none;
+  cursor: pointer;
+}
+
  h1, h2, h3{
   display: flex;
   align-items: center;
