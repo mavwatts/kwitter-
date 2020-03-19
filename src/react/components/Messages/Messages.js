@@ -1,5 +1,5 @@
 import React from "react";
-import { useForm, Controller } from "react-hook-form";
+import { useForm } from "react-hook-form";
 import { TextField, Button } from "@material-ui/core";
 import MessageBoard from "./MessageBoard";
 
@@ -14,7 +14,7 @@ const Messages = props => {
   const storedAuthToken =
     JSON.parse(localStorage?.getItem("login"))?.result?.token ?? undefined;
 
-  const { register, handleSubmit, reset, control /*watch*/ } = useForm({
+  const { register, handleSubmit, reset } = useForm({
     defaultValues: {
       text: ""
     }
@@ -72,8 +72,7 @@ const Messages = props => {
       <br />
       <h3>Message Board for {storedName}</h3>
       <MessageBoard />
-      {/* <p>logged in: {loggedIn ? "true" : "false"}</p> */}
-      {/* <p>token: {authToken}</p> */}
+
       <p>
         stored token?: {storedAuthToken ? storedAuthToken : "no stored token"}
       </p>
