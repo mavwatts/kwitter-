@@ -8,7 +8,6 @@ import {
   createActions,
   createReducer
 } from "./helpers";
-import { get } from "https";
 
 const url = domain + "/messages";
 

@@ -4,6 +4,8 @@
   justify-content: center;
   align-items: center;
   padding: 0 1em;
+  width: 100vw;
+  height: 3em;
 }
 
 #menu-links {
@@ -12,17 +14,24 @@
 }
 
 #menu-links a {
-  padding-right: 0.5em;
-  color: darkblue;
-  text-decoration: underline;
+  padding-right: 1em;
+  color: white;
+  text-decoration: none;
   cursor: pointer;
 }
 
- h2{
+#menu-links a:hover {
+  padding-right: 1em;
+  color: blue;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+ h1, h2, h3{
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #87cef9
+  color: white
 }
 
 
@@ -32,4 +41,8 @@ body {
 
 .ui.divider.inverted {
   color: black;
+}
+
+label {
+  color: white;
 }
