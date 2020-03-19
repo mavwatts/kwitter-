@@ -6,7 +6,6 @@ import { createUser } from "../../redux";
 import "./SignupForm.css";
 import { Link } from "../components";
 
-
 class SignUpForm extends React.Component {
   state = { username: "", password: "", displayName: "" };
 
@@ -23,7 +22,6 @@ class SignUpForm extends React.Component {
     const { loading, error } = this.props;
     return (
       <React.Fragment>
-        <form id="login-form" >
         <Form id="signup-form" onSubmit={this.createUser}>
           <Form.Field>
             <label>Username</label>
@@ -60,7 +58,6 @@ class SignUpForm extends React.Component {
 
         {loading && <Spinner name="circle" color="blue" />}
         {error && <p style={{ color: "red" }}>{error.message}</p>}
-      </form>
       </React.Fragment>
     );
   }

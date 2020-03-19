@@ -13,16 +13,17 @@ class Menu extends React.Component {
   render() {
     return (
       <div id="menu">
-             
+        {/* <img src='/logo/duck-logo.png' height='50px' width='50px' />
+        <h1>Kwacker</h1> */}
         {this.props.isAuthenticated && (
           <div id="menu-links">
-            <Link to="/messagefeed">Feed</Link>
+            <Link to="/profiles/:username">Profile</Link>
+            <Link to="/profiles/:username/messagefeed">Feed</Link>
             <Link to="/" onClick={this.handleLogout}>
               Logout
             </Link>
           </div>
         )}
-        
       </div>
     );
   }
