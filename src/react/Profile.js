@@ -9,8 +9,8 @@ class Profile extends React.Component {
     return (
       <>
         <Menu isAuthenticated={this.props.isAuthenticated} />
-        <h2>Profile</h2>
         <Route path="/profiles/:username/messagefeed" component={Messages} />
+        <h1>Profile Page</h1>
       </>
     );
   }
