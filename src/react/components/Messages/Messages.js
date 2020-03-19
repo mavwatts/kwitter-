@@ -14,17 +14,18 @@ const Messages = props => {
   const storedAuthToken =
     JSON.parse(localStorage?.getItem("login"))?.result?.token ?? undefined;
 
-  const { register, handleSubmit, reset, control /*watch*/ } = useForm();
+  const { register, handleSubmit, reset, control /*watch*/ } = useForm({
+    defaultValues: {
+      text: ""
+    }
+  });
 
   const onSubmit = async (data, e) => {
+    reset();
     const storedAuthToken =
       JSON.parse(localStorage?.getItem("login"))?.result?.token ?? undefined;
     console.log(data);
-    console.log(data.text);
 
-    console.log(e);
-
-    reset({ text: "" });
     const messagesURL = "https://kwitter-api.herokuapp.com/messages";
 
     const response = await fetch(messagesURL, {
@@ -52,8 +53,7 @@ const Messages = props => {
       <h3>Post a Message Here</h3>
 
       <form onSubmit={handleSubmit(onSubmit)}>
-        <Controller
-          as={TextField}
+        <TextField
           multiline={true}
           fullWidth={true}
           rowsMax="10"
@@ -66,8 +66,7 @@ const Messages = props => {
           title="250 characters max"
           required={true}
           inputRef={register}
-          control={control}
-        ></Controller>
+        ></TextField>
         <Button type="submit">Post a Message</Button>
       </form>
       <br />
