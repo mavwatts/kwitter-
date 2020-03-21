@@ -58,7 +58,6 @@ const Messages = props => {
           fullWidth={true}
           rowsMax="10"
           name="text"
-          label="Post"
           type="text"
           variant="outlined"
           placeholder="type message here"
@@ -67,7 +66,7 @@ const Messages = props => {
           required={true}
           inputRef={register}
         ></TextField>
-        <Button type="submit">Post a Message</Button>
+        <Button type="submit">Post</Button>
       </form>
       <br />
       <h3>Message Board for {storedName}</h3>

@@ -17,6 +17,7 @@
     "react-router-dom": "^5.1.2",
     "react-scripts": "^3.4.0",
     "react-spinkit": "^3.0.0",
+    "react-svg": "^11.0.14",
     "redux": "^4.0.5",
     "redux-auth-wrapper": "^2.1.0",
     "semantic-ui-react": "^0.88.2"
@@ -39,6 +40,7 @@
   ],
   "devDependencies": {
     "@types/node": "^13.9.1",
-    "dependency-cruiser": "^5.5.0"
+    "dependency-cruiser": "^5.5.0",
+    "file-loader": "^6.0.0"
   }
 }
