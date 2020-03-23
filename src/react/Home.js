@@ -1,16 +1,18 @@
 import React from "react";
 import { LoginForm } from "./components";
 import { userIsNotAuthenticated } from "./HOCs";
-// import Signupform from "./components/SignupForm";
-import { Link } from "./components"
+import { Link } from "./components";
+import Logo from "../logo/duck-logo.jpg";
+import "./components/Home.css";
+
 
 class Home extends React.Component {
   render() {
     return (
       <>
         <h2>
-          {" "}
-          <img src="/logo/duck-logo.png" height="50px" width="50px" alt='duck-logo' />
+          <div id='logoID'><img src={Logo} alt="website-logo" height="50px" width="50px"/></div>
+        
           Kwacker
         </h2>
         <LoginForm />

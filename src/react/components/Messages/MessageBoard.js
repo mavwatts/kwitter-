@@ -1,7 +1,7 @@
 import React from "react";
 import { Button } from "@material-ui/core";
 import { useDispatch } from "react-redux";
-
+import "./Messages.css";
 import MessageList from "./MessageList";
 import { receiveMessages } from "../../../redux";
 
@@ -15,7 +15,6 @@ const MessageBoard = props => {
       <MessageList />
       <Button onClick={() => dispatch(receiveMessages())}>Refresh Board</Button>
       <p>stored username for search: {storedName}</p>
-      {/* <p>state username: {username} </p> */}
     </React.Fragment>
   );
 };

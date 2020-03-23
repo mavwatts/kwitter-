@@ -18,7 +18,7 @@ const MessageList = () => {
 
   const useStyles = makeStyles(theme => ({
     root: {
-      width: "100%",
+      width: "50%",
       maxWidth: "100%",
       backgroundColor: theme.palette.background.paper
     },
