@@ -50,10 +50,12 @@ const MessageList = () => {
                       className={classes.inline}
                       color="textPrimary"
                     ></Typography>
+
                     {value.text}
                   </React.Fragment>
                 }
               />
+              <p>Likes: {value.likes.length}</p>
             </ListItem>
             <Divider variant="inset" component="li" />
           </List>
