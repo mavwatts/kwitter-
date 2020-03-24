@@ -12,8 +12,8 @@ class Profile extends React.Component {
       <React.Fragment>
         <Menu isAuthenticated={this.props.isAuthenticated} />
         <Route path="/profiles/:username/messagefeed" component={Messages} />
-
         <h1>Profile Page</h1>
+        <img src={"https://kwitter-api.herokuapp.com/users/negs123/picture"} alt='profile_picture'></img>
       <ProfileCard/>
       </React.Fragment>
     );

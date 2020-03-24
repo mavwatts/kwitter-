@@ -6,6 +6,16 @@ import { uploadImage } from "../../redux";
 
 class ProfileImage extends Component {
   state = { picture: "" };
+//    fetch(url + "/" + username/picture{
+//     method: "PUT",
+//     headers: jsonHeaders,
+//     // body: formData
+//   })
+//     .then(handleJsonResponse)
+//     .then(result => dispatch(UPLOAD_PICTURE.SUCCESS(result)))
+//     .catch(err => Promise.reject(dispatch(UPLOAD_PICTURE.FAIL(err))));
+// };
+
   handleUploadUserPicture = e => {
     e.preventDefault();
     this.props.uploadImage(this.state);
@@ -30,6 +40,7 @@ class ProfileImage extends Component {
               placeholder="Select Picture"
             ></input>
           </div>
+
           <Input
             id="submitPictureButton"
             type="submit"
