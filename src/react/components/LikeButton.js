@@ -1,24 +1,25 @@
 import React from "react";
 import { connect } from "react-redux";
 
+
 class LikeButton extends React.Component {
 
-    state = {heartButton: "active icon"}
+    state = {heartButton: "active icon"} //don't need it anymore
     handleHeartToggle = event => {
         this.setState({[event.value.username] : event.value.id});
+        console.log("whatever")
       }
 
-    // const likedComment = 
   render() {
     
     return (
-      <div class="ui heart rating" role="radiogroup" tabindex="-1">
+      <div className="ui heart rating"  onRate={this.handleHeartToggle} role="radiogroup" tabIndex="-1">
         <i
-          tabindex="0"
+          tabIndex="0"
           aria-checked="true"
           aria-posinset="1"
           aria-setsize="1"
-          class={this.state.heartButton}
+          className={this.state.heartButton}
           role="radio"
         ></i>
       </div>
