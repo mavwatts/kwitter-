@@ -73,6 +73,7 @@ export const reducers = {
   messages: createReducer(asyncInitialState, {
     ...asyncCases(DELETE_MESSAGES),
     ...asyncCases(CREATE_MESSAGES),
+    // ...asyncCases(GET_MESSAGES),
     ...asyncCases(RECEIVE_MESSAGES)
   })
 };
