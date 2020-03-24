@@ -57,6 +57,6 @@ const mapStateToProps = state => {
   };
 };
 
-const mapDispatchToProps = {getUser}
+const mapDispatchToProps = { getUser };
 
-export default connect(mapStateToProps, mapDispatchToProps)(ProfileCard);
+// export default connect(mapStateToProps, mapDispatchToProps)(ProfileCard);

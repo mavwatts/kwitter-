@@ -11,12 +11,15 @@ import {
 } from "@material-ui/core";
 import { useSelector } from "react-redux";
 // import LikeButton from "../LikeButton";
-import RatingExampleHeart from "../ToggleButton"
+import RatingExampleHeart from "../ToggleButton";
+import DeleteMessage from "./DeleteMessage";
 
 const MessageList = () => {
   const messageList = useSelector(
     state => state?.messages?.messages?.result?.messages ?? []
   );
+  const storedName =
+    JSON.parse(localStorage?.getItem("login"))?.result?.username ?? undefined;
 
   const useStyles = makeStyles(theme => ({
     root: {
@@ -28,8 +31,6 @@ const MessageList = () => {
       display: "inline"
     }
   }));
-
- 
 
   const classes = useStyles();
   return (
@@ -54,14 +55,15 @@ const MessageList = () => {
                       className={classes.inline}
                       color="textPrimary"
                     ></Typography>
-
                     {value.text}
                   </React.Fragment>
                 }
               />
-              <p>Likes: {value.likes.length}</p>
+              Likes: {value.likes.length}
+              {value.username === storedName && <DeleteMessage id={value.id} />}
             </ListItem>
             {/* <LikeButton /> */}
+
             <RatingExampleHeart />
 
             <Divider variant="inset" component="li" />
