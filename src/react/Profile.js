@@ -6,6 +6,7 @@ import Messages from "./components/Messages/Messages";
 import "./components/ProfilePage.css";
 import ProfileCard from "./components/ProfileCard";
 import { useSelector } from "react-redux";
+//Mav use line 8 above to import hook; please note that this a function component now instead of a class component
 
 const Profile = props => {
   //Mave you need to use line 8 to import the react-redux useSelector hoook; you will need to use this code in your seperate home profile component
