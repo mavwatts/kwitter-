@@ -4,6 +4,7 @@ import { userIsAuthenticated } from "./HOCs";
 import { Route } from "react-router-dom";
 import Messages from "./components/Messages/Messages";
 import "./components/ProfilePage.css";
+import ProfileCard from "./components/ProfileCard"
 
 class Profile extends React.Component {
   render() {
@@ -11,6 +12,9 @@ class Profile extends React.Component {
       <React.Fragment>
         <Menu isAuthenticated={this.props.isAuthenticated} />
         <Route path="/profiles/:username/messagefeed" component={Messages} />
+        <h1>Profile Page</h1>
+        <img src={"https://kwitter-api.herokuapp.com/users/negs123/picture"} alt='profile_picture'></img>
+      <ProfileCard/>
       </React.Fragment>
     );
   }
