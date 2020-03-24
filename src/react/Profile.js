@@ -6,6 +6,8 @@ import Messages from "./components/Messages/Messages";
 import "./components/ProfilePage.css";
 import ProfileCard from "./components/ProfileCard"
 
+// const username = 
+
 class Profile extends React.Component {
   render() {
     return (
@@ -13,7 +15,7 @@ class Profile extends React.Component {
         <Menu isAuthenticated={this.props.isAuthenticated} />
         <Route path="/profiles/:username/messagefeed" component={Messages} />
         <h1>Profile Page</h1>
-        <img src={"https://kwitter-api.herokuapp.com/users/negs123/picture"} alt='profile_picture'></img>
+        <img src={`https://kwitter-api.herokuapp.com/users/${username}/picture}` alt='profile_picture'></img>
       <ProfileCard/>
       </React.Fragment>
     );
