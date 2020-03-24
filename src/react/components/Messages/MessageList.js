@@ -10,9 +10,8 @@ import {
   Typography
 } from "@material-ui/core";
 import { useSelector } from "react-redux";
-// import { Rating } from 'semantic-ui-react'
-import LikeButton from "../LikeButton";
-
+// import LikeButton from "../LikeButton";
+import RatingExampleHeart from "../ToggleButton"
 
 const MessageList = () => {
   const messageList = useSelector(
@@ -62,7 +61,8 @@ const MessageList = () => {
               />
               <p>Likes: {value.likes.length}</p>
             </ListItem>
-            <LikeButton />
+            {/* <LikeButton /> */}
+            <RatingExampleHeart />
 
             <Divider variant="inset" component="li" />
           </List>
