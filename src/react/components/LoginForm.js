@@ -3,8 +3,7 @@ import Spinner from "react-spinkit";
 import { connect } from "react-redux";
 import { login } from "../../redux";
 import "./LoginForm.css";
-import { Divider } from "semantic-ui-react";
-import Form from "./SignupForm";
+
 import './Form.css'
 
 class LoginForm extends React.Component {

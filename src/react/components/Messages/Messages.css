@@ -1,0 +1,19 @@
+.MuiButton-label{
+background-color: white;
+border-radius: 5px;
+padding: 5px;
+}
+
+form{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.MuiInputBase-root {
+    background-color: white;
+}
+
+.MuiList-root {
+    width: 5em;
+}

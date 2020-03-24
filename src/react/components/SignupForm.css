@@ -1,6 +1,4 @@
-label {
-    color: white;
-  }
+
 
 form#signup-form.ui.form {
     align-items: center;
@@ -10,7 +8,7 @@ form#signup-form.ui.form {
     
 }
 
-#login-form {
+#signup-form {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -18,5 +16,6 @@ form#signup-form.ui.form {
   border: 1px solid #DEDEDF;
   width: 44em;
   height: fit-content;
-
+  padding-top: 1em;
+  padding-bottom: 1em;
 }
