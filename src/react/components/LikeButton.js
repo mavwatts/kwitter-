@@ -3,11 +3,12 @@ import { connect } from "react-redux";
 
 class LikeButton extends React.Component {
 
-    state = {heartButton: "icon"}
+    state = {heartButton: "active icon"}
     handleHeartToggle = event => {
         this.setState({[event.value.username] : event.value.id});
       }
 
+    // const likedComment = 
   render() {
     
     return (
