@@ -1,16 +1,15 @@
 //register a user action goes here
 import {
-    domain,
-    jsonHeaders,
-    handleJsonResponse,
-    getInitStateFromStorage,
-    asyncInitialState,
-    asyncCases,
-    createActions,
-    createReducer
-  } from "./helpers";
+  domain,
+  jsonHeaders,
+  handleJsonResponse,
+  asyncInitialState,
+  asyncCases,
+  createActions,
+  createReducer
+} from "./helpers";
 
-  const url = domain + "/users";
+const url = domain + "/users";
 
 const CREATE_USER = createActions("createUser");
 export const createUser = userData => dispatch => {
@@ -26,10 +25,8 @@ export const createUser = userData => dispatch => {
     .catch(err => Promise.reject(dispatch(CREATE_USER.FAIL(err))));
 };
 
-
-
 export const reducers = {
-    createUser: createReducer(asyncInitialState, {
-      ...asyncCases(CREATE_USER)
-    })
-  };
+  createUser: createReducer(asyncInitialState, {
+    ...asyncCases(CREATE_USER)
+  })
+};
