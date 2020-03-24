@@ -11,7 +11,6 @@ class Profile extends React.Component {
       <React.Fragment>
         <Menu isAuthenticated={this.props.isAuthenticated} />
         <Route path="/profiles/:username/messagefeed" component={Messages} />
-        <h1>Profile Page</h1>
       </React.Fragment>
     );
   }
