@@ -10,6 +10,8 @@ import {
   Typography
 } from "@material-ui/core";
 import { useSelector } from "react-redux";
+// import LikeButton from "../LikeButton";
+import RatingExampleHeart from "../ToggleButton"
 
 const MessageList = () => {
   const messageList = useSelector(
@@ -26,6 +28,8 @@ const MessageList = () => {
       display: "inline"
     }
   }));
+
+ 
 
   const classes = useStyles();
   return (
@@ -57,6 +61,9 @@ const MessageList = () => {
               />
               <p>Likes: {value.likes.length}</p>
             </ListItem>
+            {/* <LikeButton /> */}
+            <RatingExampleHeart />
+
             <Divider variant="inset" component="li" />
           </List>
         );

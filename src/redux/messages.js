@@ -2,6 +2,10 @@ import {
   domain,
   jsonHeaders,
   handleJsonResponse,
+<<<<<<< HEAD
+=======
+//   getInitStateFromStorage,
+>>>>>>> e00a22e9f0a367d2efa0940edd6feedd96aedd7a
   asyncInitialState,
   asyncCases,
   createActions,
@@ -71,8 +75,7 @@ export const receiveMessages = () => dispatch => {
 export const reducers = {
   messages: createReducer(asyncInitialState, {
     ...asyncCases(DELETE_MESSAGES),
-    // ...asyncCases(CREATE_MESSAGES),
-    ...asyncCases(GET_MESSAGES),
+    ...asyncCases(CREATE_MESSAGES),
     ...asyncCases(RECEIVE_MESSAGES)
   })
 };
