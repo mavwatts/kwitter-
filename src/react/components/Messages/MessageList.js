@@ -11,12 +11,8 @@ import {
 } from "@material-ui/core";
 import { useSelector } from "react-redux";
 // import LikeButton from "../LikeButton";
-<<<<<<< HEAD
-import RatingExampleHeart from "./ToggleButton"
-=======
 import RatingExampleHeart from "./ToggleButton";
 import DeleteMessage from "./DeleteMessage";
->>>>>>> a1b25eb5de7a7d51b492acd6b7737a680afa2547
 
 const MessageList = () => {
   const messageList = useSelector(

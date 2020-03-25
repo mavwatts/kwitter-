@@ -50,19 +50,13 @@ class ProfileCard extends React.Component {
   }
 }
 
-const mapStateToProps = state => {
-  return {
-    loggedIn: state.auth.login.result.username,
-    result: state.users.getUser.result
-  };
-};
+// const mapStateToProps = state => {
+//   return {
+//     loggedIn: state.auth.login.result.username,
+//     result: state.users.getUser.result
+//   };
+// };
 
-<<<<<<< HEAD
-// const mapDispatchToProps = {getUser}
-
-// export default {ProfileCard}
-=======
-const mapDispatchToProps = { getUser };
->>>>>>> a1b25eb5de7a7d51b492acd6b7737a680afa2547
+// const mapDispatchToProps = { getUser };
 
 // export default connect(mapStateToProps, mapDispatchToProps)(ProfileCard);
