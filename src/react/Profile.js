@@ -1,12 +1,14 @@
 import React from "react";
 import { Menu } from "./components";
 import { userIsAuthenticated } from "./HOCs";
-import { /*Route*/ useRouteMatch } from "react-router-dom";
+import { useRouteMatch } from "react-router-dom";
 import Messages from "./components/Messages/Messages";
-// import "./components/ProfilePage.css";
-// import ProfileCard from "./components/ProfileCard";
+
 import UpdateUser from "./components/UpdateUser";
-//Mav use line 8 above to import hook; please note that this a function component now instead of a class component
+import "./components/ProfilePage.css";
+import ProfileCard from "./components/ProfileCard";
+import ProfileImage from './components/ProfileImage'
+
 
 const Profile = props => {
   const messageMatch = useRouteMatch("/profiles/:username/messagefeed");
@@ -20,9 +22,12 @@ const Profile = props => {
         <UpdateUser />
       ) : (
         <React.Fragment>
-          {/*MAV this is where you will put the home profile page*/}
-          <div>Profile Page</div>
-          {/* <ProfileCard /> */}
+
+          <div>Profile Page</div> 
+
+       <ProfileCard/>
+       <ProfileImage/>
+
         </React.Fragment>
       )}
     </React.Fragment>

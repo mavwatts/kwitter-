@@ -8,13 +8,13 @@ import { receiveMessages } from "../../../redux";
 const MessageBoard = props => {
   const dispatch = useDispatch();
 
-  const storedName =
-    JSON.parse(localStorage?.getItem("login"))?.result?.username ?? undefined;
+  // const storedName = JSON.parse(localStorage.getItem("login")).result.username;
+
   return (
     <React.Fragment>
       <MessageList />
       <Button onClick={() => dispatch(receiveMessages())}>Refresh Board</Button>
-      <p>stored username for search: {storedName}</p>
+      {/* <p>stored username for search: {storedName}</p> */}
     </React.Fragment>
   );
 };

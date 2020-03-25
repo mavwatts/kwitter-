@@ -12,7 +12,6 @@ class Home extends React.Component {
       <>
         <h2>
           <div id='logoID'><img src={Logo} alt="website-logo" height="50px" width="50px"/></div>
-        
           Kwacker
         </h2>
         <LoginForm />
