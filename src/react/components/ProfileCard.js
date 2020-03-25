@@ -3,6 +3,9 @@ import { Card, Icon, Image } from "semantic-ui-react";
 import { connect } from "react-redux";
 import { getUser } from "../../redux";
 import Spinner from "react-spinkit";
+import { useSelector } from "react-redux"; 
+import ProfileImage from './ProfileImage'
+
 
 class ProfileCard extends React.Component {
   componentDidMount() {
@@ -16,17 +19,15 @@ class ProfileCard extends React.Component {
   }
 
   render() {
-    if (this.props.result == null) {
-      return <Spinner name="circle" color="blue" />;
-    }
-    const user = this.props.result.user;
-
+  //  const userdescription = this.props.about
+    // const user = this.props.result.user;
+    const username = this.props.username
     return (
-      <div>
+      <>
         <Card>
           <Image
-            src={"https://kwitter-api.herokuapp.com" + user.pictureLocation}
-            wrapped
+          src={`https://kwitter-api.herokuapp.com/users/${username}/picture`} alt='profile_picture'
+          wrapped
             ui={false}
           />
           <Card.Content>
@@ -39,13 +40,14 @@ class ProfileCard extends React.Component {
             </Card.Description>
           </Card.Content>
           <Card.Content extra>
-            <a>
+            <a href>
               <Icon name="user" />
               22 Friends
             </a>
           </Card.Content>
         </Card>
-      </div>
+        <ProfileImage/>
+      </>      
     );
   }
 }
@@ -53,7 +55,9 @@ class ProfileCard extends React.Component {
 const mapStateToProps = state => {
   return {
     loggedIn: state.auth.login.result.username,
-    result: state.users.getUser.result
+    result: state.users.getUser.result,
+    loading: state.users.getUser.loading,
+    error: state.users.getUser.error,
   };
 };
 

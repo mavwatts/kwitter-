@@ -42,7 +42,7 @@ export const uploadImage = formData => (dispatch, getState) => {
 };
 // ----------
 const GET_USER = createActions("getUser");
-export const getUser = username => (dispatch, getState) =>{
+export const getUser = () => (dispatch, getState) =>{
   dispatch(GET_USER.START());
 
   const { username } = getState().auth.login.result.username;

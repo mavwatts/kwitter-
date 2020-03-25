@@ -1,4 +1,4 @@
-import { Image } from "semantic-ui-react";
+// import { Image } from "semantic-ui-react";
 import React, { Component } from "react";
 import { Input } from "semantic-ui-react";
 import { connect } from "react-redux";
