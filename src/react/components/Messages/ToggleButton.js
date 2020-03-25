@@ -11,11 +11,13 @@ const RatingExampleHeart = ({ id, likeId }) => {
     console.log("clicked");
     const storedAuthToken =
       JSON.parse(localStorage?.getItem("login"))?.result?.token ?? undefined;
+    const storedName =
+      JSON.parse(localStorage?.getItem("login"))?.result?.username ?? undefined;
 
     for (const like of likeId) {
       console.log(like.username);
-      if (like.username === "negs123") {
-        console.log("negs123 likes this message");
+      if (like.username === storedName) {
+        console.log(storedName + "likes this message");
         console.log(like.id);
         try {
           const response = await fetch(likesURL + `/${like.id}`, {
