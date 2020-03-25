@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useForm } from "react-hook-form";
 import { TextField, Button } from "@material-ui/core";
 import MessageBoard from "./MessageBoard";
@@ -8,6 +8,10 @@ import { receiveMessages } from "../../../redux";
 
 const Messages = props => {
   const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(receiveMessages());
+  }, [dispatch]);
 
   const storedName =
     JSON.parse(localStorage?.getItem("login"))?.result?.username ?? undefined;
@@ -44,7 +48,6 @@ const Messages = props => {
       dispatch(receiveMessages());
     }
   };
-  dispatch(receiveMessages());
 
   return (
     <React.Fragment>

@@ -5,6 +5,7 @@ import "./Messages.css";
 import MessageList from "./MessageList";
 import { receiveMessages } from "../../../redux";
 
+
 const MessageBoard = props => {
   const dispatch = useDispatch();
 
