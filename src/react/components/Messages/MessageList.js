@@ -11,7 +11,7 @@ import {
 } from "@material-ui/core";
 import { useSelector } from "react-redux";
 // import LikeButton from "../LikeButton";
-import RatingExampleHeart from "../ToggleButton";
+import RatingExampleHeart from "./ToggleButton";
 import DeleteMessage from "./DeleteMessage";
 
 const MessageList = () => {
@@ -64,7 +64,7 @@ const MessageList = () => {
             </ListItem>
             {/* <LikeButton /> */}
 
-            <RatingExampleHeart />
+            <RatingExampleHeart id={value.id} likeId={value.likes} />
 
             <Divider variant="inset" component="li" />
           </List>

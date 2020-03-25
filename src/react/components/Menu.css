@@ -27,13 +27,14 @@
   cursor: pointer;
 }
 
- h1, h2, h3{
+h1,
+h2,
+h3 {
   display: flex;
   align-items: center;
   justify-content: center;
-  color: white
+  color: white;
 }
-
 
 body {
   background-color: #f7f7f7;

@@ -37,7 +37,8 @@ const DeleteMessage = ({ id }) => {
       console.log(data);
       dispatch(receiveMessages());
     } catch (error) {
-      console.log(error.message);
+      console.error(error.name);
+      console.error(error.message);
     }
   };
 
