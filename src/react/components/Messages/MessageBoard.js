@@ -8,8 +8,8 @@ import { receiveMessages } from "../../../redux";
 const MessageBoard = props => {
   const dispatch = useDispatch();
 
-  const storedName = JSON.parse(localStorage.getItem("login")).result.username;
-
+  const storedName =
+    JSON.parse(localStorage?.getItem("login"))?.result?.username ?? undefined;
   return (
     <React.Fragment>
       <MessageList />
