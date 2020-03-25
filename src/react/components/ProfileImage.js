@@ -1,4 +1,4 @@
-import { Image } from "semantic-ui-react";
+// import { Image } from "semantic-ui-react";
 import React, { Component } from "react";
 import { Input } from "semantic-ui-react";
 import { connect } from "react-redux";
@@ -6,15 +6,15 @@ import { connect } from "react-redux";
 
 class ProfileImage extends Component {
   state = { picture: "" };
-//    fetch(url + "/" + username/picture{
-//     method: "PUT",
-//     headers: jsonHeaders,
-//     // body: formData
-//   })
-//     .then(handleJsonResponse)
-//     .then(result => dispatch(UPLOAD_PICTURE.SUCCESS(result)))
-//     .catch(err => Promise.reject(dispatch(UPLOAD_PICTURE.FAIL(err))));
-// };
+  //    fetch(url + "/" + username/picture{
+  //     method: "PUT",
+  //     headers: jsonHeaders,
+  //     // body: formData
+  //   })
+  //     .then(handleJsonResponse)
+  //     .then(result => dispatch(UPLOAD_PICTURE.SUCCESS(result)))
+  //     .catch(err => Promise.reject(dispatch(UPLOAD_PICTURE.FAIL(err))));
+  // };
 
   handleUploadUserPicture = e => {
     e.preventDefault();

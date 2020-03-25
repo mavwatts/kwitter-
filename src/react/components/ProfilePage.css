@@ -1,13 +1,11 @@
 body {
-    background-color: #58b397;
+  background-color: #58b397;
 }
 
 label {
-    color: white;
-  }
+  color: white;
+}
 
-  #root {
-     margin-top: 5em;
-  }
-
-  
+#root {
+  margin-top: 5em;
+}
