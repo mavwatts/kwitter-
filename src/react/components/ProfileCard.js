@@ -19,7 +19,7 @@ class ProfileCard extends React.Component {
   render() {
   //  const userdescription = this.props.about
     // const user = this.props.result.user;
-    const username = this.props.username
+    const username = JSON.parse(localStorage.getItem("login")).result.username
     return (
       <>
         <Card>
@@ -38,10 +38,8 @@ class ProfileCard extends React.Component {
             </Card.Description>
           </Card.Content>
           <Card.Content extra>
-            <a href>
               <Icon name="user" />
               22 Friends
-            </a>
           </Card.Content>
         </Card>
         <ProfileImage/>

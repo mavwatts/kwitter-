@@ -2,10 +2,10 @@
 import React, { Component } from "react";
 import { Input } from "semantic-ui-react";
 import { connect } from "react-redux";
-// import { uploadImage } from "../../redux";
+import { uploadImage } from "../../redux";
 
 class ProfileImage extends Component {
-  state = { picture: "" };
+  // state = { picture: "" };
   //    fetch(url + "/" + username/picture{
   //     method: "PUT",
   //     headers: jsonHeaders,
@@ -18,12 +18,13 @@ class ProfileImage extends Component {
 
   handleUploadUserPicture = e => {
     e.preventDefault();
-    this.props.uploadImage(this.state);
+    const photo = new FormData(e.target)
+    this.props.uploadImage(photo);
   };
 
-  handleChange = e => {
-    this.setState({ [e.target.name]: e.target.value });
-  };
+  // handleChange = e => {
+  //   this.setState({ [e.target.name]: e.target.value });
+  // };
 
   render() {
     return (
@@ -54,9 +55,10 @@ class ProfileImage extends Component {
 
 export default connect(
   state => ({
+    loginusername: state.auth.login.result.username,
     result: state.users.uploadImage.result,
     loading: state.users.uploadImage.loading,
     error: state.users.uploadImage.error
   }),
-  // { uploadImage }
+  { uploadImage }
 )(ProfileImage);

@@ -31,14 +31,3 @@
   justify-content: center;
   align-items: center;
 }
-
-.ui.divider{
-  color: white;
-  line-height: 2em;
-  width: 100vw;
-}
-
-.ui.divider.inverted, .ui.horizontal.inverted.divider, .ui.vertical.inverted.divider {
- color: white; 
-}
-
