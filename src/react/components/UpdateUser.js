@@ -1,6 +1,7 @@
 import React from "react";
 import { useForm } from "react-hook-form";
 import { TextField, Button } from "@material-ui/core";
+import {updateuser} from './UpdateUser.css'
 
 const UpdateUser = () => {
   const { register, handleSubmit, reset } = useForm({
@@ -54,7 +55,6 @@ const UpdateUser = () => {
         inputRef={register}
       />
 
-      <div />
 
       <TextField
         name="password"
@@ -65,8 +65,6 @@ const UpdateUser = () => {
         inputProps={{ minLength: 5 }}
         inputRef={register}
       />
-
-      <div />
 
       <Button color="primary" type="submit">
         Update

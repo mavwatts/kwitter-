@@ -33,7 +33,7 @@ export const uploadImage = formData => (dispatch, getState) => {
 
   return fetch(url + "/" + username + "/picture", {
     method: "PUT",
-    headers: { Authorization: "Bearer" + token, Accept: "application/json" },
+    headers: { Authorization: "Bearer " + token, Accept: "application/json" },
     body: formData
   })
     .then(handleJsonResponse)

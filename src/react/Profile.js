@@ -3,7 +3,6 @@ import { Menu } from "./components";
 import { userIsAuthenticated } from "./HOCs";
 import { useRouteMatch } from "react-router-dom";
 import Messages from "./components/Messages/Messages";
-
 import UpdateUser from "./components/UpdateUser";
 import "./components/ProfilePage.css";
 import ProfileCard from "./components/ProfileCard";
@@ -26,7 +25,6 @@ const Profile = props => {
           <div>Profile Page</div> 
 
        <ProfileCard/>
-       <ProfileImage/>
 
         </React.Fragment>
       )}

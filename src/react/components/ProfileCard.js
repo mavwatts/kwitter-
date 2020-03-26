@@ -19,7 +19,7 @@ class ProfileCard extends React.Component {
   render() {
   //  const userdescription = this.props.about
     // const user = this.props.result.user;
-    const username = this.props.username
+    const username = JSON.parse(localStorage.getItem("login")).result.username
     return (
       <>
         <Card>
