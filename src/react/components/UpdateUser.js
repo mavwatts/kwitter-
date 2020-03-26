@@ -1,8 +1,6 @@
 import React from "react";
 import { useForm } from "react-hook-form";
 import { TextField, Button } from "@material-ui/core";
-import DeleteUser from "./DeleteUser.js";
-// import /Users/lorihenderson/assessment-kwitter-project/src/react/components/Messages/DeleteUser.js
 import {updateuser} from './UpdateUser.css'
 
 const UpdateUser = () => {
