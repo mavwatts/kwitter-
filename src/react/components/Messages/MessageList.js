@@ -10,7 +10,6 @@ import {
   Typography
 } from "@material-ui/core";
 import { useSelector } from "react-redux";
-// import LikeButton from "../LikeButton";
 import RatingExampleHeart from "./ToggleButton";
 import DeleteMessage from "./DeleteMessage";
 
@@ -62,7 +61,6 @@ const MessageList = () => {
               Likes: {value.likes.length}
               {value.username === storedName && <DeleteMessage id={value.id} />}
             </ListItem>
-            {/* <LikeButton /> */}
 
             <RatingExampleHeart id={value.id} likeId={value.likes} />
 

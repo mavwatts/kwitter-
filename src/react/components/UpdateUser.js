@@ -1,6 +1,8 @@
 import React from "react";
 import { useForm } from "react-hook-form";
 import { TextField, Button } from "@material-ui/core";
+import DeleteUser from "./DeleteUser.js";
+// import /Users/lorihenderson/assessment-kwitter-project/src/react/components/Messages/DeleteUser.js
 
 const UpdateUser = () => {
   const { register, handleSubmit, reset } = useForm({
@@ -42,36 +44,39 @@ const UpdateUser = () => {
   });
 
   return (
-    <form onSubmit={onSubmit}>
-      <h1>Update Account</h1>
+    <React.Fragment>
+      <form onSubmit={onSubmit}>
+        <h1>Update Account</h1>
 
-      <TextField
-        size="small"
-        label="display name"
-        name="displayName"
-        variant="filled"
-        placeholder="Display Name"
-        inputRef={register}
-      />
+        <TextField
+          size="small"
+          label="display name"
+          name="displayName"
+          variant="filled"
+          placeholder="Display Name"
+          inputRef={register}
+        />
 
-      <div />
+        <div />
 
-      <TextField
-        name="password"
-        type="password"
-        label="password"
-        placeholder="Password"
-        variant="filled"
-        inputProps={{ minLength: 5 }}
-        inputRef={register}
-      />
+        <TextField
+          name="password"
+          type="password"
+          label="password"
+          placeholder="Password"
+          variant="filled"
+          inputProps={{ minLength: 5 }}
+          inputRef={register}
+        />
 
-      <div />
+        <div />
 
-      <Button color="primary" type="submit">
-        Update
-      </Button>
-    </form>
+        <Button color="primary" type="submit">
+          Update
+        </Button>
+      </form>
+      <DeleteUser />
+    </React.Fragment>
   );
 };
 

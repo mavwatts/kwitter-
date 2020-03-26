@@ -1,13 +1,12 @@
-//register a user action goes here
 import {
-    domain,
-    jsonHeaders,
-    handleJsonResponse,
-    asyncInitialState,
-    asyncCases,
-    createActions,
-    createReducer
-  } from "./helpers";
+  domain,
+  jsonHeaders,
+  handleJsonResponse,
+  asyncInitialState,
+  asyncCases,
+  createActions,
+  createReducer
+} from "./helpers";
 
 const url = domain + "/users";
 
@@ -25,49 +24,63 @@ export const createUser = userData => dispatch => {
     .catch(err => Promise.reject(dispatch(CREATE_USER.FAIL(err))));
 };
 
-// const UPDATE_USER = createActions("updateUser");
-// export const updateUser = userData => dispatch => {
-//   dispatch(UPDATE_USER.START());
+const UPLOAD_PICTURE = createActions("uploadImage");
+export const uploadImage = formData => (dispatch, getState) => {
+  dispatch(UPLOAD_PICTURE.START());
 
-//   const {token, username} = getState().auth.login.result;
+  const { token, username } = getState().auth.login.result;
 
-//   return fetch(url, { //url + / + {}
-//     method: "PATCH",
-//     headers: {Authorization: "Bearer" + token, ...jsonHeaders},
-//     body: JSON.stringify(userData)
-//   })
-//     .then(handleJsonResponse)
-//     .then(result => dispatch(UPDATE_USER.SUCCESS(result)))
-//     .catch(err => Promise.reject(dispatch(UPDATE_USER.FAIL(err))));
-// };
+  return fetch(url + "/" + username + "/picture", {
+    method: "PUT",
+    headers: { Authorization: "Bearer" + token, Accept: "application/json" },
+    body: formData
+  })
+    .then(handleJsonResponse)
+    .then(result => dispatch(UPLOAD_PICTURE.SUCCESS(result)))
+    .catch(err => Promise.reject(dispatch(UPLOAD_PICTURE.FAIL(err))));
+};
+// ----------
+const GET_USER = createActions("getUser");
+export const getUser = () => (dispatch, getState) =>{
+  dispatch(GET_USER.START());
 
-// const DELETE_USER = createActions("deleteUser");
-// export const deleteUser = () => dispatch => {
-//   dispatch(DELETE_USER.START());
+  const { username } = getState().auth.login.result.username;
+  return fetch(url + "/" + username, {
+    method: "GET",
+    headers: jsonHeaders,
+    // body: formData
+  })
+    .then(handleJsonResponse)
+    .then(result => dispatch(UPLOAD_PICTURE.SUCCESS(result)))
+    .catch(err => Promise.reject(dispatch(UPLOAD_PICTURE.FAIL(err))));
+};
 
-//   return fetch(url, {
-//     method: "DELETE",
-//     headers: {Authorization: "Bearer" + token, ...jsonHeaders},
-//   })
-//     .then(handleJsonResponse)
-//     .then(result => dispatch(DELETE_USER.SUCCESS(result)))
-//     .catch(err => Promise.reject(dispatch(DELETE_USER.FAIL(err))));
-// };
+const DELETE_USER = createActions("deleteUser");
+export const deleteUser = () => (dispatch, getState) => {
+  dispatch(DELETE_USER.START());
+
+  const {token, username} = getState().auth.login.result;
+  return fetch(url + "/" + username, {
+    method: "DELETE",
+    headers: {Authorization: "Bearer" + token, ...jsonHeaders}
+  })
+    .then(handleJsonResponse)
+    .then(result => dispatch(DELETE_USER.SUCCESS(result)))
+    .catch(err => Promise.reject(dispatch(DELETE_USER.FAIL(err))));
+};
 
 
 export const reducers = {
-    createUser: createReducer(asyncInitialState, {
-      ...asyncCases(CREATE_USER),
-      // ...asyncCases(UPDATE_USER),
-      // ...asyncCases(DELETE_USER)
-    })
-  };
-
-  // export default connect(
-  //   state => ({
-  //     result: state.users.createUser.result,
-  //     loading: state.users.createUser.loading,
-  //     error: state.users.createUser.error
-  //   }),
-  //   { createUser }
-  // )(SignUpForm);
+  createUser: createReducer(asyncInitialState, {
+    ...asyncCases(CREATE_USER)
+  }),
+  uploadImage: createReducer(asyncInitialState, {
+    ...asyncCases(UPLOAD_PICTURE)
+  }),
+  getUser: createReducer(asyncInitialState, {
+    ...asyncCases(GET_USER)
+  }),
+  deleteUser: createReducer(asyncInitialState, {
+    ...asyncCases(DELETE_USER)
+  })
+};
